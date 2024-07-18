@@ -1,7 +1,7 @@
 <script>
 export default {
     props: ["card"],
-    
+
     data() {
         return {
             base_url: 'http://localhost:8000',
@@ -11,6 +11,7 @@ export default {
 </script>
 
 <template>
+    
     <div class="card" style="width: calc(100% / 3);">
         <template v-if="!card.img.startsWith('http')">
             <img class="card-img-top" :src="base_url + '/storage/' + card.img" alt="">
