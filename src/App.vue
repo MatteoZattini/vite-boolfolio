@@ -35,7 +35,7 @@ export default {
 		clickPage(element) {
 			axios.get(element).then(response => {
 				this.projects = response.data.projects;
-				console.log(element.url)
+				console.log(this.projects.links)
 			})
 		}
 	},
@@ -56,29 +56,29 @@ export default {
 <template>
 	<h1>ciao</h1>
 	<div class="container">
-		<!-- <nav aria-label="...">
+		<nav aria-label="...">
 			<ul class="pagination">
-				<li class="page-item" :class="isActive ? 'disabled' : ''" @click="prevPage()">
+				<!-- <li class="page-item" :class="isActive ? 'disabled' : ''" @click="prevPage()">
 					<a class="page-link">Previous</a>
-				</li>
+				</li> -->
 				<template v-for="link in projects.links">
-					<li class="page-item">
-						<a class="page-link" @click="clickPage(link.url)" href="">{{ link.label }}</a>
+					<li class="page-item" :class="{ active: link.active }">
+						<a class="page-link" @click="clickPage(link.url)" href="#">{{ link.label }}</a>
 					</li>
 
 				</template>
-				<li class="page-item" @click="nextPage()">
+				<!-- <li class="page-item" @click="nextPage()">
 					<a class="page-link" href="#">Next</a>
-				</li>
+				</li> -->
 			</ul>
-		</nav> -->
-		<nav aria-label="Page navigation">
+		</nav>
+		<!-- <nav aria-label="Result projects pages">
 			<ul class="pagination">
 				<li v-for="link in projects.links" class="page-item" :class="{ disabled: !link.url, active: link.active }">
 					<a href="#" class="page-link" @click="clickPage(link.url)" v-html="link.label"></a>
 				</li>
 			</ul>
-		</nav>
+		</nav> -->
 		<div class="row">
 			<div class="col-12 d-flex flex-wrap justify-content-center">
 				<template v-for="project in projects.data">
