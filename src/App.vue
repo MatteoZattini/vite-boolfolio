@@ -56,7 +56,7 @@ export default {
 <template>
 	<h1>ciao</h1>
 	<div class="container">
-		<nav aria-label="...">
+		<nav aria-label="Result projects pages">
 			<ul class="pagination">
 				<!-- <li class="page-item" :class="isActive ? 'disabled' : ''" @click="prevPage()">
 					<a class="page-link">Previous</a>
@@ -72,13 +72,7 @@ export default {
 				</li> -->
 			</ul>
 		</nav>
-		<!-- <nav aria-label="Result projects pages">
-			<ul class="pagination">
-				<li v-for="link in projects.links" class="page-item" :class="{ disabled: !link.url, active: link.active }">
-					<a href="#" class="page-link" @click="clickPage(link.url)" v-html="link.label"></a>
-				</li>
-			</ul>
-		</nav> -->
+
 		<div class="row">
 			<div class="col-12 d-flex flex-wrap justify-content-center">
 				<template v-for="project in projects.data">
