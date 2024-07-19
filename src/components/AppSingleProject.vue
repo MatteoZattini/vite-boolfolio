@@ -21,17 +21,18 @@ export default {
 
     mounted() {
         axios.get('http://localhost:8000/api/projects/' + this.$route.params.id).then((response) => {
+            // + this.$route.params.id
             console.log(response);
-            this.project = response.data.projects.data;
+            this.project = response.data.project;
+            console.log(this.project);
         });
     }
 }
 </script>
 
 <template>
-    <template v-for="item in project">
-        <h1>{{ item.title }}</h1>
-    </template>
+    <h1>{{ project.title }}</h1>
+    <p>{{ project.description }}</p>
 </template>
 
 <style scoped></style>
