@@ -54,34 +54,8 @@ export default {
 </script>
 
 <template>
-	<h1>ciao</h1>
-	<div class="container">
-		<nav aria-label="Result projects pages">
-			<ul class="pagination">
-				<!-- <li class="page-item" :class="isActive ? 'disabled' : ''" @click="prevPage()">
-					<a class="page-link">Previous</a>
-				</li> -->
-				<template v-for="link in projects.links">
-					<li class="page-item" :class="{ active: link.active }">
-						<a class="page-link" @click="clickPage(link.url)" href="#">{{ link.label }}</a>
-					</li>
-
-				</template>
-				<!-- <li class="page-item" @click="nextPage()">
-					<a class="page-link" href="#">Next</a>
-				</li> -->
-			</ul>
-		</nav>
-
-		<div class="row">
-			<div class="col-12 d-flex flex-wrap justify-content-center">
-				<template v-for="project in projects.data">
-					<SingleCard :card="project" />
-				</template>
-			</div>
-		</div>
-	</div>
-
+	<router-link :to="{ name: 'home' }"> home </router-link>
+	<router-view></router-view>
 </template>
 
 <style scoped></style>
