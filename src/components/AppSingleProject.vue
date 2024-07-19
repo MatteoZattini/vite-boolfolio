@@ -1,7 +1,8 @@
 <script>
+import SingleCard from './SingleCard.vue';
 
 export default {
-    name: 'AppContacts',
+    name: 'AppSingleProject',
 
     components: {
        
@@ -24,7 +25,7 @@ export default {
 </script>
 
 <template>
-<h1>contacts</h1>
+    
 </template>
 
 <style scoped>

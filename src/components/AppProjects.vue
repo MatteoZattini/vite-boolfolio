@@ -44,6 +44,9 @@ export default {
     <section>
         <h1>ciao</h1>
         <div class="container">
+            <template v-for="id in projects.data">
+                <router-link :to="{ name: 'single-project', params: { id: id.id } }"> single project </router-link>
+            </template>
             <nav aria-label="Result projects pages">
                 <ul class="pagination">
                     <li v-for="link in projects.links" class="page-item"
